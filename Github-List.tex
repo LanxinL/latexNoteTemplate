@@ -1,0 +1,188 @@
+%-------------------------
+% Resume in Latex
+% Author : Sourabh Bajaj
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+
+\usepackage{ragged2e}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.2in}
+% \addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{0pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{#2 \vspace{-2pt}}
+    % \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheadingOneLine}[2]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheadingOneLineNoB}[2]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      #1 & \textit{\small #2} \\
+    \end{tabular*}\vspace{-20pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\Large Lanxin Lei} & {}\\
+  % \textbf{\href{http://sourabhbajaj.com/}{\Large Lanxin Lei}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+  % \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : (+86) 15332370878  \\
+  % {University of Electronic Science and Technology of China} & Mobile : (+86) 15332370878  \\
+  % {Embedded specialty. Graduation date: \small{30/06/2019}} & {\small GPA} : 3.49/4  \\
+\end{tabular*}
+
+
+% %-----------EDUCATION-----------------
+% \section{Education}
+%   \resumeSubHeadingListStart
+%     \resumeSubheading
+%       {Georgia Institute of Technology}{Atlanta, GA}
+%       {Master of Science in Computer Science;  GPA: 4.00}{Aug. 2012 -- Dec. 2013}
+%     \resumeSubheading
+%       {Birla Institute of Technology and Science}{Pilani, India}
+%       {Bachelor of Engineering in Electrical and Electronics;  GPA: 3.66 (9.15/10.0)}{Aug. 2008 -- July. 2012}
+%   \resumeSubHeadingListEnd
+
+% -----------PROFILE SUMMARY -----------------
+\section{List of projects made in mmlab}
+
+      \resumeItemListStart
+
+        \resumeItem{Exploration more for potentially good actions} \\
+        \begin{itemize}
+          \item \justifying{Implemented the method that made use of shorter estimations to  encourage actions with ”potential” of being good.}
+          \begin{itemize} \item \href{https://github.com/LanxinL/minMaxExp}{https://github.com/LanxinL/minMaxExp} \end{itemize}
+          \begin{itemize} \item \href{https://github.com/LanxinL/minMaxExp/invitations}{Invitation link: https://github.com/LanxinL/minMaxExp/invitations} \end{itemize}
+          \item \justifying{Preparing for submitting the project to NeurIPS 2019.}     
+        \end{itemize}
+
+        \resumeItem{\href{}Exploit in exploration} \\
+        \begin{itemize}
+          \item\justifying{Implemented the method that used the signs of advantage value to train a discriminator for improving sampling efficiency of policy, trained in the Mujoco environments.}
+          \begin{itemize} \item \href{https://github.com/LanxinL/GanRl/tree/repo/gan_fixStd_extra_item}{https://github.com/LanxinL/GanRl/tree/repo/gan\_fixStd\_extra\_item} \end{itemize}
+          \begin{itemize} \item \href{https://github.com/LanxinL/GanRl/invitations}{Invitation link: https://github.com/LanxinL/GanRl/invitations} \end{itemize}
+            \item \justifying{Submission of ICML 2019.} 
+        \end{itemize}
+
+        \resumeItem{\href{}Sub-Environments} \\
+        \begin{itemize}
+          \item\justifying{Created two sub-environments for Arm3D environment to make reward designing easier.}
+          \begin{itemize} \item \href{https://github.com/LanxinL/arm3dENV}{https://github.com/LanxinL/arm3dENV} \end{itemize}          
+          \begin{itemize} \item \href{https://github.com/LanxinL/arm3dENV/invitations}{Invitation link: https://github.com/LanxinL/arm3dENV/invitations} \end{itemize}
+            \item\justifying{Implemented the method that parallelly trained both the sub-environments and the initial environment.}
+          \begin{itemize} \item \href{https://github.com/LanxinL/arm3d}{https://github.com/LanxinL/arm3d} \end{itemize}
+          \begin{itemize} \item \href{https://github.com/LanxinL/arm3d/invitations}{Invitation link: https://github.com/LanxinL/arm3d/invitations} \end{itemize}
+            % \item\justifying{Oue method divides the initial Arm3D environment into two sub-environments, and parallelly trains both the sub-environments and the initial environment, which makes the reward designing easier. }
+          \item {Validated the effectiveness of the method in a toy simulator, a grid world with one single line.}
+          \begin{itemize} \item \href{https://github.com/LanxinL/Q-learning-Gridworld}{https://github.com/LanxinL/Q-learning-Gridworld} \end{itemize}
+          \begin{itemize} \item \href{https://github.com/LanxinL/Q-learning-Gridworld/invitations}{Invitation link: https://github.com/LanxinL/Q-learning-Gridworld/invitations} \end{itemize}
+          \end{itemize}
+
+        \resumeItem{\href{}Visualization tool} \\
+        \begin{itemize}
+          % \item\justifying{For each parameters' setting, the tool can draw its outputs under the different seeds into a single curve, then makes the comparison of performance easier.}
+          \item\justifying{For the outputs of all the seeds under the same parameters' setting, the tool can draw them into a single curve, which makes the comparison of performance easier.}
+          \begin{itemize} \item \href{https://github.com/LanxinL/plotViaSeaborn}{https://github.com/LanxinL/plotViaSeaborn} \end{itemize}
+          \begin{itemize} \item \href{https://github.com/LanxinL/plotViaSeaborn/invitations}{Invitation link: https://github.com/LanxinL/plotViaSeaborn/invitations} \end{itemize}
+          \end{itemize}
+        
+      \resumeItemListEnd
+
+  
+
+% %-----------PROJECTS-----------------
+% \section{Projects}
+%   \resumeSubHeadingListStart
+%     \resumeSubItem{QuantSoftware Toolkit}
+%       {Open source python library for financial data analysis and machine learning for finance.}
+%     \resumeSubItem{Github Visualization}
+%       {Data Visualization of Git Log data using D3 to analyze project trends over time.}
+%     \resumeSubItem{Recommendation System}
+%       {Music and Movie recommender systems using collaborative filtering on public datasets.}
+%     \resumeSubItem{Mac Setup}
+%       {Book that gives step by step instructions on setting up developer environment on Mac OS.}
+%   \resumeSubHeadingListEnd
+
+%
+%--------PROGRAMMING SKILLS------------
+%\section{Programming Skills}
+%  \resumeSubHeadingListStart
+%    \item{
+%      \textbf{Languages}{: Scala, Python, Javascript, C++, SQL, Java}
+%      \hfill
+%      \textbf{Technologies}{: AWS, Play, React, Kafka, GCE}
+%    }
+%  \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
