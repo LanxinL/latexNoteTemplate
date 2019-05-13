@@ -17,6 +17,8 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 
+\usepackage{ragged2e}
+
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
 \fancyfoot{}
@@ -27,7 +29,8 @@
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
+\addtolength{\topmargin}{-.2in}
+% \addtolength{\topmargin}{-.5in}
 \addtolength{\textheight}{1.0in}
 
 \urlstyle{same}
@@ -38,16 +41,18 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
+  \vspace{0pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 %-------------------------
 % Custom commands
 \newcommand{\resumeItem}[2]{
   \item\small{
-    \textbf{#1}{: #2 \vspace{-2pt}}
+    \textbf{#1}{#2 \vspace{-2pt}}
+    % \textbf{#1}{: #2 \vspace{-2pt}}
   }
 }
+
 
 \newcommand{\resumeSubheading}[4]{
   \vspace{-1pt}\item
@@ -55,6 +60,20 @@
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
     \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheadingOneLine}[2]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheadingOneLineNoB}[2]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      #1 & \textit{\small #2} \\
+    \end{tabular*}\vspace{-20pt}
 }
 
 \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
@@ -74,96 +93,207 @@
 
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-  \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+  \textbf{\Large Lanxin Lei} & Email : \href{mailto:leilanxin@163.com}{leilanxin@163.com}\\
+  % \textbf{\href{http://sourabhbajaj.com/}{\Large Lanxin Lei}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+  % \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : (+86) 15332370878  \\
+  {University of Electronic Science and Technology of China} & Mobile : (+86) 15332370878  \\
+  {Embedded specialty. Graduation time: \small{30/06/2019}} & {\small GPA} : 3.49/4  \\
 \end{tabular*}
 
 
-%-----------EDUCATION-----------------
-\section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Georgia Institute of Technology}{Atlanta, GA}
-      {Master of Science in Computer Science;  GPA: 4.00}{Aug. 2012 -- Dec. 2013}
-    \resumeSubheading
-      {Birla Institute of Technology and Science}{Pilani, India}
-      {Bachelor of Engineering in Electrical and Electronics;  GPA: 3.66 (9.15/10.0)}{Aug. 2008 -- July. 2012}
-  \resumeSubHeadingListEnd
+% %-----------EDUCATION-----------------
+% \section{Education}
+%   \resumeSubHeadingListStart
+%     \resumeSubheading
+%       {Georgia Institute of Technology}{Atlanta, GA}
+%       {Master of Science in Computer Science;  GPA: 4.00}{Aug. 2012 -- Dec. 2013}
+%     \resumeSubheading
+%       {Birla Institute of Technology and Science}{Pilani, India}
+%       {Bachelor of Engineering in Electrical and Electronics;  GPA: 3.66 (9.15/10.0)}{Aug. 2008 -- July. 2012}
+%   \resumeSubHeadingListEnd
 
+% -----------PROFILE SUMMARY -----------------
+\vspace{-8pt}\section{PROFILE SUMMARY }
+  \resumeSubHeadingListStart
+    \resumeSubItem{Research: }
+      {A published paper in \href{https://openreview.net/forum?id=rkxciiC9tm}{ICLR 2019}. Four research experiences.}
+    \resumeSubItem{Engineering: }
+      {Two engineering practices. Three competitions.}
+    \resumeSubItem{Expertise: }
+      {Reinforcement Learning. Recommendation System}
+    \resumeSubItem{Programming Skills: }
+      {Python, Bash, Java, C}
+    % \resumeSubItem{Character: }
+      % {Actively seek solutions to the problems and pursue innovation}
+  \resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------------
-\section{Experience}
+\section{RESEARCH EXPERIENCES}
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Google}{Mountain View, CA}
-      {Software Engineer}{Oct 2016 - Present}
+      {Mmlab}{Hong kong, CN}
+      {Research Assistant}{Sep. 2018 - Present}
       \resumeItemListStart
-        \resumeItem{Tensorflow}
-          {TensorFlow is an open source software library for numerical computation using data flow graphs; primarily used for training deep learning models. Worked on APIs and performance for training models on Tensor Processing Units (TPU).}
-        \resumeItem{Apache Beam}
-          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines, as well as a set of language-specific SDKs for constructing pipelines and runners.}
+
+        \resumeItem{Exploration more for potentially good actions} \\
+        \begin{itemize}
+          \item \justifying{Implemented the method that made use of shorter estimations to  encourage actions with ”potential” of being good.}
+          
+          \item \justifying{Verified the effectiveness in 8 Mujoco environments, 3 Atari environments and 3 sparse environments.}
+
+          \item \justifying{Preparing for submitting the project to NeurIPS 2019.}          % \item \justifying{When estimating advantages, a long trajectory may push the best choice away although the longer trajectory makes the estimation more accurate. So our method makes use of the shorter estimations to reduce the averaging effect. The method basically encourages actions which have a ”potential” of being good.}
+        \end{itemize}
+
+        \resumeItem{Exploit in exploration} \\
+        \begin{itemize}
+          \item\justifying{Implemented the method that used the signs of advantage value to train a discriminator for improving sampling efficiency of policy, trained in the Mujoco environments.}
+          \item\justifying{Analyzed reasons for little effect of the method.}
+        \end{itemize}
+
+        \resumeItem{Sub-Environments} \\
+        \begin{itemize}
+          \item\justifying{Created two sub-environments for Arm3D environment to make reward designing easier.}
+          \item\justifying{Implemented the method that parallelly trained both the sub-environments and the initial environment.}
+          \item {Validated the effectiveness of the method in a toy simulator, a grid world with one single line.}
+          % \item\justifying{Oue method divides the initial Arm3D environment into two sub-environments, and parallelly trains both the sub-environments and the initial environment, which makes the reward designing easier. }
+        \end{itemize}
+
       \resumeItemListEnd
 
     \resumeSubheading
-      {Coursera}{Mountain View, CA}
-      {Senior Software Engineer}{Jan 2014 - Oct 2016}
+      {Sensetime}{Shenzhen, CN}
+      {Research Intern}{Jan. 2018 - Sep. 2018}
       \resumeItemListStart
-        \resumeItem{Notifications}
-          {Service for sending email, push and in-app notifications. Involved in features such as delivery time optimization, tracking, queuing and A/B testing. Built an internal app to run batch campaigns for marketing etc.}
-        \resumeItem{Nostos}
-          {Bulk data processing and injection service from Hadoop to Cassandra and provides a thin REST layer on top for serving offline computed data online.}
-        \resumeItem{Workflows}
-          {Dataduct an open source workflow framework to create and manage data pipelines leveraging reusables patterns to expedite developer productivity.}
-        \resumeItem{Data Collection}
-          {Designed the internal survey and crowd sourcing platform which allowed for creating various tasks for crowd sourcing or embedding surveys across the Coursera platform.}
-        \resumeItem{Dev Environment}
-          {Analytics environment based on docker and AWS, standardized the python and R dependencies. Wrote the core libraries that are shared by all data scientists.}
-        \resumeItem{Data Warehousing}
-          {Setup, schema design and management of Amazon Redshift. Built an internal app for access to the data using a web interface. Dataduct integration for daily ETL injection into Redshift.}
-        \resumeItem{Recommendations}
-          {Core service for all recommendation systems at Coursera, currently used on the homepage and throughout the content discovery process. Worked on both offline training and online serving.}
-        \resumeItem{Content Discovery}
-          {Improved content discovery by building a new onboarding experience on coursera. Using this to personalize the search and browse experience. Also worked on ranking and indexing improvements.}
-        \resumeItem{Course Dashboards}
-          {Instructor dashboards and learner surveying tools, which helped instructors run their class better by providing data on Assignments and Learner Activity.}
+      \resumeItem{Self-driving Car} \\
+        \begin{itemize}
+          % \item  \justifying{The projece is a cooperation between Sensetime and Honda.}
+          \item \justifying{Implemented Reinforcement Learning algorithms such as DDPG, A2C and ACER for Multi-Cars control.}
+          \item \justifying{Successfully trained the algorithms in Multi-Cars simulator.}
+        \end{itemize}
+      \resumeItem{Lecture for AI education} \\
+        \begin{itemize}
+          \item \justifying{Made three lectures in Artificial Intelligence to middle school teachers.}
+        \end{itemize}
+        
       \resumeItemListEnd
 
     \resumeSubheading
-      {Lucena Research}{Atlanta, GA}
-      {Data Scientist}{Summer 2012 and 2013}
+      {SAP}{Chengdu, CN}
+      {Research Intern}{Jul. 2017 - Jan. 2018}
       \resumeItemListStart
-        \resumeItem{Portfolio Management}
-          {Created models for portfolio hedging,  portfolio optimization and price forecasting. Also creating a strategy backtesting engine used for simulating and backtesting strategies.}
-        \resumeItem{QuantDesk}
-          {Python backend for a web application used by hedge fund managers for portfolio management.}
+      \resumeItem  \justifying{Calculated the similarity of commodities by Word2Vec and the Word Mover’s Distance}
+      % \resumeItem  \justifying{Calculate the similarity of commodities by Word2Vec and \textit{From Word Embedding To Document Distances}}
+      \resumeItem \justifying{Accomplished Recommendation System by using Matrix Decomposition.}
+      \resumeItem \justifying{Replaced A/B Test with Bandit Algorithm to improve the adjustment of  recommendation strategy.}
+      % \resumeItem \justifying{Combine Transfer Learning and Doc2vec. }
+      % \resumeItem \justifying{Strengthened English ability by communicating with the British team.}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Georgia Institute of Technology}{Atlanta, GA}
-      {Research and Teaching Assistant}{Jan 2012 - Dec 2013}
+      {Institute of Information Engineering, Chinese Academy of Sciences}{Beijing, CN}
+      {Research Assistant}{Jan. 2017 - Feb. 2017}
       \resumeItemListStart
-        \resumeItem{Research Assistant - Machine Learning}
-          {Research on machine learning for portfolio hedging and replication algorithms. Modeling low-risk \& continuous-return strategies. Developed the python library QSTK.}
-        \resumeItem{Teaching Assistant - Computational Investing}
-          {The online course on Coursera, had more than 100,000 students enrolled. It was featured on the 11 Alive News and the Atlanta Journal Constitution. Involved in creating assignment, exams and conducting recitation sessions. Also taught the on-campus version of the course.}
+      \resumeItem \justifying{Implemented the Siamese-FC model to track of the target car in the video.}
+      \resumeItem \justifying{Implemented Bayesian Face Algorithm to judge whether two faces belong to the same person.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
 
-%-----------PROJECTS-----------------
-\section{Projects}
-  \resumeSubHeadingListStart
-    \resumeSubItem{QuantSoftware Toolkit}
-      {Open source python library for financial data analysis and machine learning for finance.}
-    \resumeSubItem{Github Visualization}
-      {Data Visualization of Git Log data using D3 to analyze project trends over time.}
-    \resumeSubItem{Recommendation System}
-      {Music and Movie recommender systems using collaborative filtering on public datasets.}
-    \resumeSubItem{Mac Setup}
-      {Book that gives step by step instructions on setting up developer environment on Mac OS.}
-  \resumeSubHeadingListEnd
+%-----------PUBLICATION -----------------
+\section{PUBLICATION }
+\resumeSubHeadingListStart
+
+  \resumeSubheadingOneLine
+  % \resumeSubheadingOneLine
+    {\href{https://openreview.net/forum?id=rkxciiC9tm}{\textit{An on-policy temporally consistent exploration method for deep reinforcement learning}} }{ICLR 2019}
+    \resumeItemListStart
+    \resumeItem \justifying {Introduced the dropout of hidden neuron unit to reinforcement learning policies.}
+    \resumeItem \justifying {Trained experiments, visualized performance comparison for paper writing.}    
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\clearpage
+%-----------PROJECTS EXPERIENCES-----------------
+\section{ENGINEERING EXPERIENCES }
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Joint laboratory of schools and enterprises}{Chengdu, CN}
+    {Research Assistant}{Oct. 2015 - Jun. 2017}
+    \resumeItemListStart
+    \justifying \resumeItem{ERP: }{Implemented query function for record management system by Microservices Architecture in Java.}
+    \resumeItem{Commercial projects: }{Analyzed the existing fresh market and designed product based on the achievable technology.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------COMPETITION -----------------
+\vspace{-25pt}\section{COMPETITION }
+\resumeSubHeadingListStart
+
+  \resumeSubheadingOneLine
+    {Based on pavement security camera to predict abnormal human flow }{27/03/2017}
+    \resumeItemListStart
+    \justifying \resumeItem{Project awards： }{2017 SAP Innovation Competition champion}
+    \begin{itemize}
+      \resumeItem \justifying {Designed a Computer Vision system to monitor the crowd flow based on the existing security monitoring. }
+      % \resumeItem \justifying {The system can early warn before danger occurs, and prompt notification when danger occurs. Increased project revenue by urban planning as well as business analysis. }
+    \end{itemize}
+    \resumeItemListEnd
+
+    \resumeSubheadingOneLine
+    {Future kitchen-personal assistant }{22/04/2016}
+    \resumeItemListStart
+    \justifying \resumeItem{Project awards： }{BOE Cup Honor Award}
+    \begin{itemize}
+      \resumeItem \justifying {Designed a Wisdom Kitchen Product for smart city.}
+      \resumeItem \justifying {Achieved wisdom functions, such as automated cooking, recommended recipes, kitchen safety supervision, and analysis of dietary balance.}
+      % \resumeItem \justifying {Added the function to set the cooking time, and remote-control capabilities to increase the convenience of smart kitchen. }
+    \end{itemize}
+    \resumeItemListEnd
+
+    \resumeSubheadingOneLine
+    {Ping--Let you no longer worry about college dormitory }{8/19/2015}
+    \resumeItemListStart
+    \justifying \resumeItem{Project awards： }{Changhong Cup third prize}
+    \begin{itemize}
+      % \resumeItem \justifying {Hope to reduce the occurrence of dormitory conflicts by optimizing the dormitory allocation mechanism}
+      \resumeItem \justifying {Designed a sociology-based assessment algorithm to reduce the occurrence of dormitory conflicts by optimizing the dormitory allocation mechanism. }
+      \resumeItem \justifying {Invited a psychology teacher to assist the project. }
+    \end{itemize}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+%-----------VOLUNTEER ACTIVITY-----------------
+\section{VOLUNTEER ACTIVITY}
+\resumeSubHeadingListStart
+
+  \resumeSubheadingOneLineNoB
+    {UESTC 60th anniversary volunteer }{27/09/2016 - 29/09/2017}
+  \resumeSubheadingOneLineNoB
+    {China College Student' Entrepreneurship Competition volunteer}{15/11/2016 - 20/11/2016}
+  \resumeSubheadingOneLineNoB
+    {Maker Faire Chengdu volunteer}{13/12/2016 - 14/12/2016}
+
+\resumeSubHeadingListEnd
+
+% %-----------PROJECTS-----------------
+% \section{Projects}
+%   \resumeSubHeadingListStart
+%     \resumeSubItem{QuantSoftware Toolkit}
+%       {Open source python library for financial data analysis and machine learning for finance.}
+%     \resumeSubItem{Github Visualization}
+%       {Data Visualization of Git Log data using D3 to analyze project trends over time.}
+%     \resumeSubItem{Recommendation System}
+%       {Music and Movie recommender systems using collaborative filtering on public datasets.}
+%     \resumeSubItem{Mac Setup}
+%       {Book that gives step by step instructions on setting up developer environment on Mac OS.}
+%   \resumeSubHeadingListEnd
 
 %
 %--------PROGRAMMING SKILLS------------
